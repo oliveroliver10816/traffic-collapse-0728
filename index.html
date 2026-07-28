@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Getting the rankings back — Osanix · Ozem+ · RetaFit</title>
+<title>Game plan — Osanix · Ozem+ · RetaFit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0E14'/%3E%3Cpath d='M3 21h4v6H3zM9 17h4v10H9zM15 6h4v21h-4z' fill='%23FF6B35'/%3E%3Cpath d='M21 25h4v2h-4zM27 25h3v2h-3z' fill='%237A8394'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,15 +26,13 @@ body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);
 .top{border-bottom:1px solid var(--line);padding:22px 0}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--dim);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--signal);display:inline-block;
-  animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--hold);display:inline-block}
 
-.hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
+.hero{padding:70px 0 54px;border-bottom:1px solid var(--line)}
 h1{font-family:var(--disp);font-weight:800;letter-spacing:-.035em;line-height:.94;
-  font-size:clamp(40px,7.4vw,80px);margin:0}
+  font-size:clamp(38px,7vw,76px);margin:0}
 h1 .off{color:var(--signal)}
-.stand{margin:28px 0 0;max-width:62ch;font-size:clamp(17px,2vw,20px);color:#C3C7CF}
+.stand{margin:28px 0 0;max-width:63ch;font-size:clamp(17px,2vw,20px);color:#C3C7CF}
 .stand b{color:var(--paper);font-weight:600}
 
 section{padding:52px 0;border-bottom:1px solid var(--line)}
@@ -42,33 +40,34 @@ h2{font-family:var(--disp);font-weight:600;letter-spacing:-.025em;
   font-size:clamp(25px,3.8vw,36px);margin:0 0 8px;line-height:1.1}
 .sub{color:var(--dim);margin:0 0 30px;font-size:15px;max-width:68ch}
 
-/* alert strip */
-.alert{border:1px solid #4A3410;background:#181207;padding:22px 24px;display:grid;
-  grid-template-columns:auto 1fr;gap:18px;align-items:start;margin-bottom:34px}
-.alert .ic{color:var(--warn);font-family:var(--mono);font-size:17px}
-.alert h3{margin:0 0 6px;font-size:17px;font-weight:600;color:var(--warn)}
-.alert p{margin:0;font-size:14.5px;color:#D8CDB4}
+/* breadth figure — the signature */
+.breadth{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:32px}
+.bd{background:var(--raise);padding:26px 24px}
+.bd .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:14px}
+.bd .fig{display:flex;align-items:baseline;gap:12px;font-family:var(--mono);font-weight:700;
+  letter-spacing:-.03em}
+.bd .from{font-size:clamp(30px,5vw,44px);color:var(--dim)}
+.bd .arw{font-size:20px;color:var(--dim)}
+.bd .to{font-size:clamp(30px,5vw,44px);color:var(--signal)}
+.bd p{margin:12px 0 0;font-size:13.5px;color:var(--dim)}
 
-/* proof grid */
-.proof{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
-  background:var(--line);border:1px solid var(--line)}
-.pf{background:var(--raise);padding:22px}
-.pf .k{font-family:var(--mono);font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
-.pf .k.bad{color:var(--signal)} .pf .k.good{color:var(--hold)}
-.pf h4{margin:10px 0 6px;font-size:14.5px;font-weight:600}
-.pf p{margin:0;font-size:13.5px;color:var(--dim)}
-
-/* geo table */
-table{width:100%;border-collapse:collapse;margin-top:6px;font-size:14.5px}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
 th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
   text-transform:uppercase;color:var(--dim);font-weight:400;padding:0 12px 10px 0;
   border-bottom:1px solid var(--line)}
 td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
 td.pos{font-family:var(--mono);font-weight:700}
 .g1{color:var(--hold)} .gx{color:var(--signal)} .gm{color:var(--warn)}
-.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 
-/* plan */
+.gate{border:1px solid #14382F;background:#0A1712;padding:24px;display:grid;
+  grid-template-columns:auto 1fr;gap:18px;align-items:start;margin-bottom:32px}
+.gate .ic{color:var(--hold);font-family:var(--mono);font-size:16px}
+.gate h3{margin:0 0 6px;font-size:17px;font-weight:600;color:var(--hold)}
+.gate p{margin:0;font-size:14.5px;color:#B7C9C2}
+
 .acts{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
 .act{background:var(--raise);padding:26px 24px}
 .act.you{background:#0E1219}
@@ -82,18 +81,14 @@ td.pos{font-family:var(--mono);font-weight:700}
 .act p.why{color:var(--dim);font-size:13.5px;margin-top:10px}
 .act b{color:var(--paper);font-weight:600}
 
-.copy{margin-top:16px;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#080B10}
-.chead{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;
-  border-bottom:1px solid var(--line)}
-.chead span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-button{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  background:transparent;border:1px solid #2A3242;color:var(--paper);padding:5px 12px;
-  border-radius:2px;cursor:pointer;transition:.15s}
-button:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
-button.done{background:var(--hold);color:var(--ink);border-color:var(--hold)}
-pre{margin:0;padding:16px 14px;font-family:var(--mono);font-size:13px;line-height:1.65;
-  color:#D6DAE1;white-space:pre-wrap;word-break:break-word}
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:1px}
+.fk{background:var(--raise);padding:26px 24px}
+.fk .cond{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:12px}
+.fk.a .cond{color:var(--hold)} .fk.b .cond{color:var(--signal)}
+.fk h4{margin:0 0 10px;font-size:17px;font-weight:600}
+.fk p{margin:0;font-size:14.5px;color:#B4BAC5}
 
 .rule{background:var(--raise);border:1px solid var(--line);padding:32px 30px}
 .rule p{margin:0 0 14px;font-size:16px;color:#B4BAC5;max-width:64ch}
@@ -102,21 +97,20 @@ pre{margin:0;padding:16px 14px;font-family:var(--mono);font-size:13px;line-heigh
 footer{padding:38px 0 70px;font-family:var(--mono);font-size:11px;color:var(--dim);
   letter-spacing:.06em;line-height:1.9}
 
-@media(max-width:720px){
+@media(max-width:760px){
   .hero{padding:48px 0 40px}
-  .alert{grid-template-columns:1fr}
-  .proof{grid-template-columns:1fr}
+  .breadth,.fork{grid-template-columns:1fr}
+  .gate{grid-template-columns:1fr}
 }
-@media(prefers-reduced-motion:reduce){ .dot{animation:none} }
 </style>
 </head>
 <body>
 
 <div class="top"><div class="wrap">
   <div class="eyebrow">
-    <span><span class="dot"></span> Recovery plan</span>
-    <span>Break: 25 Jul 00:00 UTC</span>
-    <span>Updated: 28 Jul</span>
+    <span><span class="dot"></span> Game plan</span>
+    <span>Manual actions: all clear</span>
+    <span>Verified through 26 Jul</span>
     <span>Osanix · Ozem+ · RetaFit</span>
   </div>
 </div></div>
@@ -124,188 +118,157 @@ footer{padding:38px 0 70px;font-family:var(--mono);font-size:11px;color:var(--di
 <div class="wrap">
 
   <div class="hero">
-    <h1>You were right.<br>We got <span class="off">pushed down</span>.</h1>
-    <p class="stand">Google ran a ranking update on the night of <b>24–25 July</b> that fourteen
-      independent trackers picked up. Our traffic broke at <b>25 July 00:00 UTC exactly</b>. The pages
-      are untouched — still indexed, still crawled, still <b>top-5 on Bing and Brave today</b>. Google
-      alone re-scored us, and handed our brand searches to <b>Osanix and Ozem+ pages injected into real,
-      aged pharmacy websites</b>.</p>
+    <h1>Google didn't push us down.<br>It <span class="off">narrowed</span> us.</h1>
+    <p class="stand">All three sites came back <b>“No issues detected”</b> — so this is algorithmic, not
+      a penalty, and there's nothing to appeal. What actually happened is sharper than “we lost
+      rankings”: Google cut the <b>number of different searches these domains are allowed to appear
+      for</b> by about 90%. Where we're still eligible, we often rank <b>better</b> than before.</p>
   </div>
 
   <section>
-    <h2>Where we actually stand right now</h2>
-    <p class="sub">Measured on live Google from real home broadband in each country, with a control
-      query proving the method works. Not estimates.</p>
+    <h2>What actually changed</h2>
+    <p class="sub">Distinct search terms each site appeared for. Complete data only — 19–24 July
+      against 25–26 July.</p>
+
+    <div class="breadth">
+      <div class="bd"><div class="lab">osanix.shop — searches we appear for</div>
+        <div class="fig"><span class="from">135</span><span class="arw">→</span><span class="to">18</span></div>
+        <p>Impressions/day 1,920 → 46. We didn't slip down the page on 135 searches — we stopped
+          being shown for 117 of them at all.</p></div>
+      <div class="bd"><div class="lab">ozem-plus.store — searches we appear for</div>
+        <div class="fig"><span class="from">174</span><span class="arw">→</span><span class="to">16</span></div>
+        <p>Impressions/day 573 → 38. Same shape. The few that survived are the ones where we're the
+          single most obvious answer.</p></div>
+    </div>
+
     <div class="scroll">
     <table>
       <tr><th>Search</th><th>Country</th><th>Was</th><th>Now</th><th></th></tr>
-      <tr><td>oz+ · oz+ farmacia</td><td>Italy</td><td class="pos">2.3</td>
-        <td class="pos g1">#1</td><td>Ahead of 18 real pharmacies. Earning.</td></tr>
+      <tr><td>oz+ · oz+ farmacia</td><td>Italy</td><td class="pos">5.1</td>
+        <td class="pos g1">#1.4</td><td>Rank <em>improved</em>. But only ~7 impressions/day left.</td></tr>
       <tr><td>oz+ kruidvat</td><td>Netherlands</td><td class="pos">1.7</td>
-        <td class="pos g1">#2</td><td>On mobile — where 90% of our money is.</td></tr>
+        <td class="pos g1">#2</td><td>Mobile only — where ~90% of our money is.</td></tr>
       <tr><td>oz+ opinie</td><td>Poland</td><td class="pos">2.3</td>
-        <td class="pos gm">#11</td><td>Damaged but alive. Recoverable.</td></tr>
-      <tr><td>is osanix legit</td><td>UK</td><td class="pos">4.3</td>
-        <td class="pos gm">#11</td><td>Page 2.</td></tr>
+        <td class="pos gm">#11</td><td>Damaged, alive.</td></tr>
       <tr><td>osanix</td><td>UK</td><td class="pos">6.3</td>
         <td class="pos gx">gone</td><td>Absent from top 29. Was 6,081 impressions.</td></tr>
       <tr><td>ozem+ · oz+ dm</td><td>Germany</td><td class="pos">4.5</td>
         <td class="pos gx">gone</td><td>Absent from top 29, checked twice.</td></tr>
     </table>
     </div>
-
-    <div class="proof" style="margin-top:34px">
-      <div class="pf"><div class="k good">#4</div><h4>Bing still ranks us</h4>
-        <p>“is osanix legit” is #4 on Bing and #4 on Brave for “oz+ dm” — the same pages Google moved
-          to page 2. Two other crawlers disagree with Google.</p></div>
-      <div class="pf"><div class="k bad">31×</div><h4>The damage picks on rank</h4>
-        <p>Searches where we ranked 1–3 kept 50% of traffic. Where we ranked 6–10, 1.6%. Searchers
-          can't see our rank — so this can't be demand.</p></div>
-      <div class="pf"><div class="k">332</div><h4>Jennie's ads went <em>up</em></h4>
-        <p>Her live Osanix ads went 124 → 332 on the exact day we died. Her side rose while ours
-          went to zero. She genuinely can't see us — we were under 3% of her volume.</p></div>
-      <div class="pf"><div class="k good">clean</div><h4>We didn't cause it</h4>
-        <p>Pages Google hadn't re-crawled since our rewrite fell <em>harder</em>. Zero of our 60 newest
-          backlinks have ever been crawled. Not our code, not our links.</p></div>
-    </div>
+    <p class="sub" style="margin-top:22px;margin-bottom:0">Italy is the proof this isn't demand: we rank
+      <b>#1</b> there and still lost 93% of impressions, because we're only eligible for one search now
+      instead of a dozen. And we remain <b>#4 on Bing and #4 on Brave</b> for the same searches Google
+      dropped us from — the pages are fine; Google alone changed its mind about them.</p>
   </section>
 
   <section>
     <h2>The plan</h2>
-    <div class="alert">
-      <div class="ic">▲</div>
-      <div><h3>It hasn't stopped — RetaFit started falling on 27 July</h3>
-        <p>osanix's position is still sinking daily (8.8 → 13.2 over four days) and tryretafit went
-          from 247 impressions on the 27th to 88 on the 28th. We don't yet know if this is a demotion
-          that has bottomed out or a rolling wipe. We'll know by <b>31 July</b>. That is why the first
-          moves below are defensive.</p></div>
+
+    <div class="gate">
+      <div class="ic">●</div>
+      <div><h3>One correction first: we do not yet know if it's still spreading</h3>
+        <p>I told you RetaFit had started falling. That came from 27–28 July, which Google has
+          <b>not finished counting</b>. On the last complete day, 26 July, RetaFit had its
+          <b>best day ever</b> — 37 clicks, 563 impressions. The 27th–29th finalise around
+          <b>30 July</b>, and that is the fork in this plan. Everything before then is defensive.</p></div>
     </div>
 
     <div class="acts">
 
-      <div class="act you">
+      <div class="act">
         <div class="ahead"><span class="num">01</span>
-          <h3>Check Manual Actions — the last unknown</h3>
-          <span class="who bob">You · 2 min</span></div>
-        <p>Search Console → <b>Security &amp; Manual Actions → Manual actions</b>, for osanix.shop and
-          ozem-plus.store. Send me the exact wording, even if it says “No issues detected”.</p>
-        <p class="why">This is the only check with no API — five investigators hit the same wall. It
-          matters because a human-issued penalty looks identical from outside but <b>can be appealed</b>,
-          while an algorithm can't. It changes the whole plan.</p>
+          <h3>Stop all link building. Today.</h3>
+          <span class="who">Us</span></div>
+        <p>Not one of the 60 newest links has ever been crawled by Google — they are earning us
+          <b>nothing</b>. But the fleet of near-duplicate accounts behind them (osanix / osanixx /
+          osannix, seven Google Sites properties) is exactly the pattern that converts a clean record
+          into a manual penalty.</p>
+        <p class="why">We just confirmed all three sites are penalty-free. That's an asset worth
+          protecting — right now we're risking it for zero return.</p>
       </div>
 
       <div class="act">
         <div class="ahead"><span class="num">02</span>
-          <h3>Freeze Italy. Touch nothing.</h3>
-          <span class="who">Us · today</span></div>
-        <p>ozem-plus.store/it/ is <b>#1 for both “oz+” and “oz+ farmacia”</b> and booked <b>$80 on
-          27 July</b>. No edits, no new pages, no links pointed at it.</p>
-        <p class="why">It's the only thing still earning from a ranking. Everything else is recovery
-          work; this is the patient we don't operate on.</p>
+          <h3>Rip out the dead-X popup and the back-button trap</h3>
+          <span class="who">Us</span></div>
+        <p>ozem-plus traps mobile visitors in a full-screen overlay whose ✕ <b>does nothing</b> — the
+          close handler is never registered. All three sites also hijack the back button.</p>
+        <p class="why">It didn't cause this — the site that has it is the one sitting at #1 in Italy.
+          But it's a named deceptive pattern, a quality classifier has just been over these domains,
+          and removing it is free.</p>
       </div>
 
       <div class="act">
         <div class="ahead"><span class="num">03</span>
-          <h3>Move the work to Italy and Poland</h3>
-          <span class="who">Us · this week</span></div>
-        <p>“oz+ farmacia” has <b>no Search Console history at all</b> — a query we rank #1 for and have
-          never harvested. Poland sits at #11 and is winnable. Build out the Italian tree first, Polish
-          second.</p>
-        <p class="why">This is the highest-return work available. Germany and the UK are not coming back
-          on these domains in a timeframe worth waiting for — see the last section for why.</p>
+          <h3>Leave Italy and the Dutch mobile pages completely alone</h3>
+          <span class="who">Us</span></div>
+        <p>Italy is #1.4 and booked <b>$80 on 27 July</b>. Netherlands holds #2 on mobile. No edits,
+          no new links, no experiments on either.</p>
+        <p class="why">These are the only pages Google still trusts. Every change is a chance to lose
+          the eligibility we've still got.</p>
       </div>
 
       <div class="act">
         <div class="ahead"><span class="num">04</span>
-          <h3>Stop the link building, and rip out the dead-X popup</h3>
-          <span class="who">Us · today</span></div>
-        <p>None of the 60 newest links have ever been crawled, so they're earning nothing — but the
-          duplicate-account fleet behind them is exactly what earns a manual penalty. Separately,
-          ozem-plus traps mobile visitors in an overlay whose ✕ <b>does nothing</b>.</p>
-        <p class="why">Neither caused this — proven both ways: the worst popup offender is the page
-          sitting at #1 in Italy. But a quality classifier is now actively looking at these domains, and
-          both are free to remove.</p>
-      </div>
-
-      <div class="act">
-        <div class="ahead"><span class="num">05</span>
-          <h3>Re-measure on 31 July</h3>
+          <h3>Re-measure on 30 July — this is the decision point</h3>
           <span class="who">Us</span></div>
-        <p>When 27–29 July finalise we'll know two things: is Italy still #1, and did RetaFit stabilise
-          or keep sliding.</p>
-        <p class="why">That single answer decides whether we rebuild on these domains or move the
-          content somewhere else. No point committing the effort before we know.</p>
+        <p>When 27–29 July finalise we get one clean answer: <b>has it bottomed out, or is it still
+          narrowing?</b></p>
+        <p class="why">I'm not going to spend your week rebuilding on domains that may still be
+          sliding. Three days of waiting buys the difference between repairing these and replacing
+          them.</p>
       </div>
 
-      <div class="act you">
-        <div class="ahead"><span class="num">06</span>
-          <h3>One better question for Jennie</h3>
-          <span class="who bob">You · 1 message</span></div>
-        <p>Don't ask if anything dropped — her dashboard has no keyword or search data at all, so she
-          physically cannot see what we're asking about.</p>
-        <div class="copy">
-          <div class="chead"><span>Send as-is</span><button data-c="j">Copy</button></div>
-          <pre id="j">Hi Jennie, one specific question — has the direct/organic (non-paid) session count on the Osanix funnel changed since the 24th of July? Not the paid traffic, just the people arriving without clicking an ad. Trying to work out whether brand searches changed or whether it's something on our end.</pre>
-        </div>
-        <p class="why">That's the one brand-search proxy she actually owns. Her ad traffic tripling
-          tells us nothing about it.</p>
-      </div>
+    </div>
 
+    <div class="fork">
+      <div class="fk a">
+        <div class="cond">If it has bottomed out</div>
+        <h4>Rebuild breadth on these domains</h4>
+        <p>We're eligible for ~17 searches instead of ~150. The work is earning that breadth back:
+          real depth on the pages that survived, the commercial tail in Italy and Poland
+          (“oz+ farmacia” is #1 and has <em>never</em> been harvested), and genuine citations rather
+          than pastebin links. Slow, but these domains keep their age.</p>
+      </div>
+      <div class="fk b">
+        <div class="cond">If it's still narrowing</div>
+        <h4>Move the content, keep the domains alive</h4>
+        <p>Two-week-old shells that Google has decided against don't argue their way back. We move the
+          proven pages onto a domain with real age, leave these running as they are, and stop investing
+          in them. Nothing gets deleted — dead domains can recover quietly at a later update.</p>
+      </div>
     </div>
   </section>
 
   <section>
-    <h2>Why the UK and Germany aren't coming back on these domains</h2>
-    <p class="sub">This is the part that decides what we build next.</p>
+    <h2>What we change regardless</h2>
+    <p class="sub">The three rules that would have stopped this being a total loss.</p>
     <div class="rule">
-      <p>Look at who took our slots. <b>fileybaypharmacy.co.uk/product/osanix/</b> — a real Filey Bay
-        Pharmacy. <b>stern-apotheke-frechen.de/produkt/ozem-plus/</b> — a real German pharmacy in
-        Frechen. Plus about fifteen more genuine pharmacy and doctors'-practice domains.</p>
-      <p>They are running <b>exactly our playbook</b> — the same brand-review page, the same affiliate
-        intent. They kept their rankings for one reason: <b>their domains are real and old, and ours were
-        11 and 15 days old.</b> When Google tightened, age and trust decided who stayed.</p>
-      <p>So the fix isn't better content — our content already beat them on Bing. <b>The variable is the
-        domain, not the page.</b> Which leaves two honest options, and we should pick one deliberately
-        rather than drift:</p>
-      <p><b>Build one durable domain</b> that accumulates age and covers many brands, and stop minting a
-        fresh shell per offer — or <b>accept these are 2–4 week burn assets</b> and require them to pay
-        back inside three weeks. Right now we're paying the cost of the first and getting the lifespan of
-        the second.</p>
-      <p>And one rule regardless: <b>never let a site be 98% one brand word again.</b> RetaFit outlived
-        the other two by two days for exactly one reason — only 70% of its traffic was its own name.
-        Concentration is what turned a ranking wobble into a total loss.</p>
+      <p><b>One durable domain, not a fresh shell per offer.</b> The sites that took our slots are
+        running <em>our exact playbook</em> — brand-review pages bolted onto real, aged pharmacy
+        domains. Our content already beats theirs on Bing. The variable was never the page, it was the
+        domain: theirs are years old, ours were 11 and 15 days old. Every new offer we launch on a new
+        two-week-old domain is a coin flip on the next update.</p>
+      <p><b>Never let a site be 98% one brand word again.</b> RetaFit is the only one still working, and
+        it's the only one where the biggest query isn't our own brand — it's a third-party TV term.
+        That page is thin, fast, and grew while everything around it died. More pages shaped like that,
+        from day one, on every site.</p>
+      <p><b>Budget these as three-week assets.</b> Osanix earned across roughly ten good days. If a
+        build can't pay back inside three weeks, it shouldn't be built the way we've been building it.
+        Right now we pay the cost of a long-term asset and get the lifespan of a campaign.</p>
+      <p>And one loose end worth closing: <b>177 test clicks across 41 different tags</b> are sitting in
+        our own reporting and distorted the first analysis. One reserved prefix from now on so they
+        strip out with a single filter.</p>
     </div>
   </section>
 
   <footer>
-    22 agents across two rounds · 1,132 checks · live SERPs from UK/DE/NL/PL/IT home connections<br>
-    Method validated against a control query on every run — measurements that failed their control were discarded.<br>
-    Read-only: no site, ad account or network setting was changed.
+    22 agents across two rounds · live Google SERPs from UK/DE/NL/PL/IT home connections<br>
+    Every measurement validated against a control query; runs that failed their control were discarded.<br>
+    Figures from complete data only — 27–29 July are still being counted by Google.
   </footer>
 
 </div>
-
-<script>
-document.querySelectorAll('button[data-c]').forEach(function(b){
-  b.addEventListener('click', function(){
-    var t = document.getElementById(b.dataset.c).innerText;
-    var done = function(){
-      var o = b.textContent; b.textContent = 'Copied'; b.classList.add('done');
-      setTimeout(function(){ b.textContent = o; b.classList.remove('done'); }, 1600);
-    };
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(t).then(done, function(){ fallback(t, done); });
-    } else { fallback(t, done); }
-  });
-});
-function fallback(text, cb){
-  var ta = document.createElement('textarea');
-  ta.value = text; ta.setAttribute('readonly','');
-  ta.style.cssText = 'position:absolute;left:-9999px';
-  document.body.appendChild(ta); ta.select();
-  try { document.execCommand('copy'); cb(); } catch(e) {}
-  document.body.removeChild(ta);
-}
-</script>
 </body>
 </html>
