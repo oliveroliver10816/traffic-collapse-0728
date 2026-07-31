@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gate re-measure — 31 Jul · Osanix · Ozem+ · RetaFit</title>
+<meta name="description" content="The 30 Jul decision gate, run on complete data: no recovery, and the collapse has reached the third site.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E14'/%3E%3Cpath d='M5 10l7 8 5-4 10 8' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0E14; --raise:#11151E; --paper:#E8E6E1; --dim:#7A8394;
+  --signal:#FF6B35; --hold:#4EC9B0; --line:#1C2230; --warn:#F5C563;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+a{color:var(--signal)}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.top{border-bottom:1px solid var(--line);padding:22px 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--hold);display:inline-block}
+header.hero{padding:52px 0 34px;border-bottom:1px solid var(--line)}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(2rem,5.6vw,3.1rem);line-height:1.05;
+  letter-spacing:-.03em;margin:14px 0 0;max-width:19ch}
+h1 em{font-style:normal;color:var(--signal)}
+.lede{color:var(--dim);font-size:1.05rem;max-width:62ch;margin:18px 0 0}
+h2{font-family:var(--disp);font-weight:600;font-size:1.45rem;letter-spacing:-.02em;margin:0 0 8px}
+h3{font-family:var(--mono);font-size:.95rem;font-weight:700;margin:0;letter-spacing:.02em}
+section{padding:38px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+p{max-width:68ch}
+.site{background:var(--raise);border:1px solid var(--line);border-radius:12px;
+  padding:20px 22px;margin-bottom:14px}
+.sh{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  flex-wrap:wrap;margin-bottom:14px}
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 10px;border-radius:100px;border:1px solid currentColor}
+.tag.signal{color:var(--signal)}
+.tag.warn{color:var(--warn)}
+table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.8rem}
+.nums th{text-align:right;color:var(--dim);font-weight:400;font-size:.7rem;
+  letter-spacing:.1em;text-transform:uppercase;padding:0 0 7px}
+.nums th:first-child{text-align:left}
+.nums td{text-align:right;padding:6px 0;border-top:1px solid var(--line)}
+.nums td:first-child{text-align:left;color:var(--dim);font-family:var(--body);font-size:.85rem}
+.nums tr.now td{color:var(--paper);font-weight:700}
+.nums tr.now td:first-child{color:var(--paper)}
+.delta{font-family:var(--mono);font-size:.78rem;color:var(--dim);margin:12px 0 10px}
+.delta b{color:var(--signal)}
+.site p:last-child{margin:0;font-size:.93rem;color:#C4C8D2}
+table.cells{margin-top:14px}
+table.cells th{text-align:right;color:var(--dim);font-weight:400;font-size:.7rem;
+  letter-spacing:.1em;text-transform:uppercase;padding:0 0 7px}
+table.cells th:first-child{text-align:left}
+table.cells td{text-align:right;padding:6px 0;border-top:1px solid var(--line)}
+td.q{text-align:left;font-family:var(--body);font-size:.88rem}
+td.geo{color:var(--dim)}
+td.d{color:var(--signal);font-weight:700}
+.callout{border-left:3px solid var(--signal);background:#17110D;padding:16px 20px;
+  border-radius:0 10px 10px 0;margin:18px 0 0;max-width:70ch}
+.callout p{margin:0}
+.callout.hold{border-left-color:var(--hold);background:#0D1614}
+ol.acts{list-style:none;margin:20px 0 0;padding:0;counter-reset:a}
+ol.acts li{counter-increment:a;position:relative;padding-left:42px;margin-bottom:18px;max-width:68ch}
+ol.acts li::before{content:counter(a,decimal-leading-zero);position:absolute;left:0;top:1px;
+  font-family:var(--mono);font-size:.75rem;color:var(--signal);border:1px solid var(--line);
+  border-radius:7px;width:29px;height:29px;display:grid;place-items:center}
+ol.acts b{display:block;margin-bottom:3px}
+ol.acts span{color:var(--dim);font-size:.93rem}
+footer{padding:34px 0 56px;color:var(--dim);font-size:.84rem}
+@media (max-width:620px){
+  .nums td:first-child{font-size:.78rem}
+  table{font-size:.74rem}
+}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap"><div class="eyebrow">
+  <span><span class="dot"></span> gate re-measure</span>
+  <span>31 Jul 2026</span>
+  <span>data complete through 29 Jul</span>
+</div></div></div>
+
+<header class="hero"><div class="wrap">
+  <h1>No recovery — and it has <em>reached the third site.</em></h1>
+  <p class="lede">The plan set 30 Jul as the decision gate: bottomed out, rebuild breadth here;
+     still narrowing, move the proven pages to an aged domain. The 27–29 Jul window has now
+     finalised, so the gate can be read. It reads <b>move</b>.</p>
+</div></header>
+
+<div class="wrap">
+
+<section>
+  <h2>Where each site stands</h2>
+  <p style="color:var(--dim);margin-top:0">Google Search Console, <code>dataState: all</code>.
+     <code>firstIncompleteDate</code> is <b>30 Jul</b> on all three properties, so 27–29 Jul is
+     complete and 30–31 Jul are excluded. Totals are read by date; the query dimension drops
+     anonymised queries and undercounts clicks.</p>
+<article class="site">
+  <div class="sh">
+    <h3>ozem-plus.store</h3><span class="tag warn">FLAT AT THE FLOOR</span>
+  </div>
+  <table class="nums"><thead><tr><th></th>
+    <th>clicks/day</th><th>impr/day</th><th>queries</th></tr></thead><tbody>
+    <tr><td>before, 19–24 Jul</td><td>36.2</td><td>719</td><td>174</td></tr>
+    <tr><td>right after, 25–26 Jul</td><td>8.0</td><td>44</td><td>16</td></tr>
+    <tr class="now"><td>gate, 27–29 Jul</td><td>9.7</td><td>43</td><td>22</td></tr>
+  </tbody></table>
+  <p class="delta">vs before: <b>clicks -73%</b> ·
+     impressions -94% ·
+     queries 174 → 22</p>
+  <p>Stopped falling, has not started recovering. Impressions per day moved 44.0 to 43.3 across the gate window — that is the same number, not a rebound. Query breadth crept 16 to 22 while traffic did not follow, so the extra queries are ones we surface for and nobody clicks.</p>
+</article>
+<article class="site">
+  <div class="sh">
+    <h3>osanix.shop</h3><span class="tag signal">STILL FALLING</span>
+  </div>
+  <table class="nums"><thead><tr><th></th>
+    <th>clicks/day</th><th>impr/day</th><th>queries</th></tr></thead><tbody>
+    <tr><td>before, 19–24 Jul</td><td>138.5</td><td>2549</td><td>135</td></tr>
+    <tr><td>right after, 25–26 Jul</td><td>4.5</td><td>89</td><td>18</td></tr>
+    <tr class="now"><td>gate, 27–29 Jul</td><td>4.0</td><td>46</td><td>22</td></tr>
+  </tbody></table>
+  <p class="delta">vs before: <b>clicks -97%</b> ·
+     impressions -98% ·
+     queries 135 → 22</p>
+  <p>The only site still actively losing ground after the cliff. Impressions per day halved again inside the gate window, 89.0 to 46.3, on top of the original 98% loss. Both matched cells moved down. This one has not found its floor.</p>
+</article>
+<article class="site">
+  <div class="sh">
+    <h3>tryretafit.com</h3><span class="tag signal">NEWLY AFFECTED</span>
+  </div>
+  <table class="nums"><thead><tr><th></th>
+    <th>clicks/day</th><th>impr/day</th><th>queries</th></tr></thead><tbody>
+    <tr><td>before, 19–24 Jul</td><td>23.3</td><td>333</td><td>47</td></tr>
+    <tr><td>right after, 25–26 Jul</td><td>29.5</td><td>432</td><td>22</td></tr>
+    <tr class="now"><td>gate, 27–29 Jul</td><td>7.7</td><td>307</td><td>30</td></tr>
+  </tbody></table>
+  <p class="delta">vs before: <b>clicks -67%</b> ·
+     impressions -8% ·
+     queries 47 → 30</p>
+  <p>The one that changed since 28 Jul, and by a different mechanism. Impressions barely moved (−8% vs pre-cliff) but clicks fell 67%. It did not lose eligibility — it lost rank.</p>
+</article>
+</section>
+
+<section>
+  <h2>RetaFit is losing rank, not eligibility</h2>
+  <p>This is the finding that is new since 28 Jul, and it needed the matched-cell check to be
+     believable — a blended position average would have shown the same drift for the wrong reason.
+     Comparing the <b>same query in the same country</b> before and during the gate window,
+     <b>five of six moved down and none moved up</b>.</p>
+  <table class="cells"><thead><tr>
+    <th>query</th><th>geo</th><th>before</th><th>gate</th><th>move</th></tr></thead>
+    <tbody>
+<tr><td class="q">retafit</td><td class="geo">gbr</td><td>10.41</td><td>14.81</td><td class="d">+4.40</td></tr>
+<tr><td class="q">reta3 höhle der löwen</td><td class="geo">deu</td><td>2.18</td><td>5.57</td><td class="d">+3.39</td></tr>
+<tr><td class="q">reta 3 höhle der löwen</td><td class="geo">deu</td><td>3.18</td><td>6.56</td><td class="d">+3.38</td></tr>
+<tr><td class="q">retafit</td><td class="geo">dnk</td><td>7.29</td><td>9.87</td><td class="d">+2.58</td></tr>
+<tr><td class="q">reta fit</td><td class="geo">dnk</td><td>3.63</td><td>4.36</td><td class="d">+0.73</td></tr>
+<tr><td class="q">retafit reviews</td><td class="geo">gbr</td><td>9.11</td><td>9.48</td><td class="d">+0.37</td></tr>
+    </tbody></table>
+  <div class="callout"><p>The German money query <b>reta3 höhle der löwen</b> went from position
+     <b>2.18 to 5.57</b> — off the first two results and down the page. That is the query the whole
+     German side of that site was built to catch.</p></div>
+</section>
+
+<section>
+  <h2>What this does and does not change</h2>
+  <p>The diagnosis from 28 Jul stands and does not need revisiting: an industry-wide Google update
+     on 23–24 Jul, no manual action on any of the three, nothing to appeal. What the gate adds is
+     that waiting it out has not worked.</p>
+  <div class="callout hold"><p>One thing is still holding and should not be touched:
+     <b>ozem-plus.store is still position 1.42 for <code>oz+</code> in Italy</b>, improved from 2.29.
+     Italy is the only place any of these three gained ground. Leave it alone.</p></div>
+  <p style="margin-top:18px">The earlier "it is spreading" alarm was retracted on 28 Jul because it
+     rested on incomplete days, and that retraction was correct at the time — 26 Jul really was
+     RetaFit's best day. With 27–29 Jul now final, the decline is real. Same guard, opposite answer.</p>
+</section>
+
+<section>
+  <h2>What to do</h2>
+  <ol class="acts">
+    <li><b>Take the gate's "move" branch</b><span>Two of three sites have not recovered in five days
+      and the third has started sliding. The pages are proven — they earned $480 organically and
+      still rank on Bing. What failed is the domain, and no amount of work on these three changes
+      how old they are.</span></li>
+    <li><b>Freeze Italy</b><span>The single position that improved. No edits, no rebuilds, no link
+      building anywhere near it.</span></li>
+    <li><b>Keep link building stopped</b><span>Nothing has changed the reason it was stopped —
+      0 of 60 newest links were ever crawled.</span></li>
+    <li><b>Re-measure again on 5 Aug</b><span>Three more complete days. If RetaFit keeps sliding on
+      matched cells, it belongs in the move too rather than being treated as the survivor.</span></li>
+  </ol>
+</section>
+
+</div>
+
+<footer><div class="wrap">
+  Search Console, three properties, windows 19–24 · 25–26 · 27–29 Jul 2026. Positions compared as
+  matched query × country cells, never as a blended average.
+  <a href="../">← back to the 28 Jul game plan</a>
+</div></footer>
+
+</body>
+</html>
